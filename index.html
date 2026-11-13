@@ -86,7 +86,7 @@ pre.msg{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1
 
  <section><h2>ใครมาบ้าง</h2>
   <div class="row" id="people"></div>
-  <form class="row" id="pform" style="margin-top:10px"><input class="grow" type="text" id="pname" placeholder="ชื่อ เช่น สาย" autocomplete="off"><button class="pri" type="submit">เพิ่มคน</button></form></section>
+  <form class="row" id="pform" style="margin-top:10px"><input class="grow" type="text" id="pname" placeholder="ชื่อ เช่น บอล" autocomplete="off"><button class="pri" type="submit">เพิ่มคน</button></form></section>
 
  <section><h2>เมนูที่สั่ง</h2><div id="items"></div>
   <button class="ghost" id="addItem">+ เพิ่มเมนู</button></section>
@@ -140,7 +140,7 @@ function build(out,T){
  const one={};
  S.people.forEach(p=>{const o=out[p.id];one[p.id]=`🧾 ยอดบิลของ ${p.name}\nต้องจ่าย ${fmt(o.pay)} บาท\n(อาหาร ${fmt(o.food,2)}${S.scOn?` + Service Charge ${fmt(o.sc,2)}`:""}${S.vatOn?` + VAT ${fmt(o.vat,2)}`:""})\nขอบคุณครับ 🙏`});
  const lines=S.people.map(p=>`• ${p.name} ${fmt(out[p.id].pay)} บาท${S.paid[p.id]?" ✓ จ่ายแล้ว":""}`);
- return{all:S.people.length?`🧾 สรุปหารบิล\nยอดรวม ${fmt(T,2)} บาท${r}\n\n${lines.join("\n")}\n\nขอบคุณครับ 🙏`:"",one}
+ return{all:S.people.length?`🧾 สรุปหารบิล\nยอดรวม ${fmt(T,2)} บาท${r}\n\n${lines.join("\n")}\n\nขอบคุณนะ 🙏`:"",one}
 }
 function copy(txt,btn){
  const o=btn.textContent,done=()=>{btn.textContent="คัดลอกแล้ว ✓";setTimeout(()=>btn.textContent=o,1600)};
