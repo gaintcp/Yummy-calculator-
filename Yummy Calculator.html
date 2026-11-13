@@ -1,0 +1,189 @@
+<!DOCTYPE html>
+<html lang="th">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, viewport-fit=cover">
+<title>หารบิล</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Noto+Sans+Thai:wght@400;500;700&family=Playfair+Display:wght@600;700&display=swap">
+<style>
+:root{--bg:#f1f0f8;--card:#fff;--ink:#1c1a33;--mute:#65638a;--line:#dcdaec;--teal:#2b2466;--teal-l:#e8e6f6;--amber:#f5a524;--amber-ink:#3a2400;--red:#c62f3b;--green:#1f7a4d;--green-l:#def3e8;--on:#2b2466;--on-ink:#fff;
+box-sizing:border-box;padding-top:env(safe-area-inset-top,0px);padding-bottom:env(safe-area-inset-bottom,0px)}
+@media (prefers-color-scheme:dark){:root:not([data-theme="light"]){--bg:#0f0d24;--card:#1a1740;--ink:#eeedf8;--mute:#a9a7c8;--line:#322f63;--teal:#c4beff;--teal-l:#25215a;--amber:#ffb52e;--amber-ink:#3a2400;--red:#ff8d96;--green:#7fe0a8;--green-l:#17382b;--on:#5b4fe0;--on-ink:#fff}}
+:root[data-theme="dark"]{--bg:#0f0d24;--card:#1a1740;--ink:#eeedf8;--mute:#a9a7c8;--line:#322f63;--teal:#c4beff;--teal-l:#25215a;--amber:#ffb52e;--amber-ink:#3a2400;--red:#ff8d96;--green:#7fe0a8;--green-l:#17382b;--on:#5b4fe0;--on-ink:#fff}
+html{scroll-padding-top:env(safe-area-inset-top,0px)}
+*{box-sizing:border-box}
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background:var(--teal);opacity:.075;-webkit-mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 24v16M17 24v7a5 5 0 0 0 10 0v-7M22 38v14'/%3E%3Cpath d='M100 34c11 0 20 8 20 15H80c0-7 9-15 20-15zM78 49h44M90 26c-3-3 3-5 0-9M101 26c-3-3 3-5 0-9'/%3E%3Cpath d='M42 112c15-7 26 2 32 11-13 2-26-2-32-11zM42 112l-7-4'/%3E%3Cpath d='M122 108l2 7 7 2-7 2-2 7-2-7-7-2 7-2z'/%3E%3C/svg%3E");mask:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='150' height='150' viewBox='0 0 150 150' fill='none' stroke='black' stroke-width='1.8' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M22 24v16M17 24v7a5 5 0 0 0 10 0v-7M22 38v14'/%3E%3Cpath d='M100 34c11 0 20 8 20 15H80c0-7 9-15 20-15zM78 49h44M90 26c-3-3 3-5 0-9M101 26c-3-3 3-5 0-9'/%3E%3Cpath d='M42 112c15-7 26 2 32 11-13 2-26-2-32-11zM42 112l-7-4'/%3E%3Cpath d='M122 108l2 7 7 2-7 2-2 7-2-7-7-2 7-2z'/%3E%3C/svg%3E")}
+body{margin:0;background:radial-gradient(900px 420px at 85% -100px,color-mix(in srgb,var(--amber) 24%,transparent),transparent),var(--bg);color:var(--ink);font:16px/1.5 "Noto Sans Thai","Sarabun",system-ui,-apple-system,"Segoe UI",sans-serif}
+main{max-width:760px;margin:0 auto;padding:20px 16px 56px}
+h1{font:700 36px/1.15 "Playfair Display","Noto Sans Thai",serif;margin:0;color:#ffd37a;letter-spacing:.01em}
+h2{font-size:17px;margin:0 0 12px;display:flex;align-items:center;gap:12px;color:var(--teal)}
+h2::after{content:"";flex:1;height:1px;background:linear-gradient(90deg,var(--amber),transparent)}
+.top{position:relative;overflow:hidden;display:flex;justify-content:space-between;align-items:flex-start;gap:12px;margin-bottom:16px;padding:30px 22px 34px;border-radius:24px;background:radial-gradient(circle at 88% 15%,rgba(245,165,36,.35),transparent 42%),linear-gradient(135deg,#171340 0%,#2d2775 60%,#4a3fb0 100%);border:1px solid rgba(255,211,122,.35);box-shadow:0 18px 36px -18px rgba(27,23,80,.7)}
+.top>div,.top button{position:relative;z-index:1}
+.orn{position:absolute;right:52px;bottom:-2px;width:176px;pointer-events:none}
+@media (max-width:520px){.orn{opacity:.28;right:-14px;width:150px}}
+.top p{margin:6px 0 0;color:#d9d6f5;font-size:14px}
+.top button{background:rgba(255,255,255,.08);color:#ffd37a;border-color:rgba(255,211,122,.5)}
+.kpis{display:grid;grid-template-columns:1fr 1fr;gap:10px;margin-bottom:16px}
+.kpi{background:var(--card);border:1px solid var(--line);border-left:5px solid var(--amber);border-radius:16px;padding:10px 14px;box-shadow:0 8px 20px -14px rgba(27,23,80,.4)}
+.kpi.un{border-left-color:var(--red)}.kpi.done{border-left-color:var(--green)}
+.kpi small{display:block;color:var(--mute);font-size:13px}
+.kpi b{font:700 27px/1.3 "Playfair Display",serif;color:var(--teal);font-variant-numeric:lining-nums tabular-nums}
+.kpi.un b{color:var(--red)}.kpi.done b{color:var(--green)}
+section{background:var(--card);border:1px solid var(--line);border-radius:20px;padding:18px;margin-bottom:16px;box-shadow:0 10px 28px -14px rgba(27,23,80,.35)}
+.row{display:flex;gap:8px;align-items:center;flex-wrap:wrap}
+input[type=text],input[type=number]{font:inherit;color:var(--ink);background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:9px 12px;min-width:0}
+input:focus-visible,button:focus-visible{outline:3px solid var(--amber);outline-offset:1px}
+.grow{flex:1 1 140px}
+button{font:inherit;cursor:pointer;border:1px solid var(--line);background:var(--card);color:var(--ink);border-radius:10px;padding:8px 14px}
+button.pri{background:var(--on);color:var(--on-ink);border-color:var(--on);font-weight:500}
+button.ghost{border-style:dashed;color:var(--mute);width:100%;margin-top:8px}
+.chip{display:inline-flex;align-items:center;gap:6px;padding:6px 8px 6px 14px;border-radius:99px;background:var(--teal-l);color:var(--teal);font-weight:500}
+.chip button{border:0;background:none;padding:0 6px;color:var(--mute);font-size:18px;line-height:1}
+.item{border-top:1px solid var(--line);padding:12px 0}
+.item:first-of-type{border-top:0;padding-top:0}
+.item .name{flex:2 1 140px}.item .price{flex:1 1 90px;max-width:130px;text-align:right}
+.who{display:flex;gap:6px;flex-wrap:wrap;margin-top:8px;align-items:center}
+.who button{border-radius:99px;padding:4px 13px;font-size:14px}
+.who button[aria-pressed=true]{background:var(--on);color:var(--on-ink);border-color:var(--on)}
+.who .all{border-style:dashed;color:var(--mute)}
+.hint{font-size:13px;color:var(--mute);margin-left:auto}
+.set{display:grid;grid-template-columns:1fr auto auto;gap:10px 12px;align-items:center}
+.set label{display:flex;gap:8px;align-items:center}
+.set input[type=number]{width:76px;text-align:right}
+.set input[type=checkbox]{width:20px;height:20px;accent-color:var(--teal)}
+.set.off .rate{opacity:.4}
+.receipts{display:grid;grid-template-columns:repeat(auto-fill,minmax(210px,1fr));gap:14px}
+.rc{background:var(--card);border:1px solid var(--line);border-radius:6px 6px 0 0;padding:14px 14px 0;position:relative;
+-webkit-mask:radial-gradient(circle 7px at 50% 100%,#0000 98%,#000) bottom/14px 100% repeat-x;mask:radial-gradient(circle 7px at 50% 100%,#0000 98%,#000) bottom/14px 100% repeat-x;padding-bottom:20px}
+.rc h3{margin:0 0 6px;font-size:17px;color:var(--teal)}
+.rc dl{margin:0;display:grid;grid-template-columns:1fr auto;gap:2px 8px;font-size:14px;color:var(--mute);font-variant-numeric:tabular-nums}
+.rc dd{margin:0;text-align:right}
+.rc .tot{border-top:2px dashed var(--line);margin-top:8px;padding-top:8px;display:flex;justify-content:space-between;align-items:baseline}
+.rc .tot b{font:700 33px/1.2 "Playfair Display",serif;font-variant-numeric:lining-nums tabular-nums}
+.rc.paid{background:var(--green-l)}.rc.paid .tot b{color:var(--green);text-decoration:line-through}
+.rc .pay{width:100%;margin-top:10px;background:var(--amber);border-color:var(--amber);color:var(--amber-ink);font-weight:700}
+.rc.paid .pay{background:var(--green);border-color:var(--green);color:#fff}
+.empty{color:var(--mute);margin:0}
+.share{display:flex;gap:8px;flex-wrap:wrap;margin-top:12px}
+.share .line,.rc .snd.line{background:#06c755;border-color:#06c755;color:#fff;font-weight:700}
+.rc .snd{width:100%;margin-top:6px}
+pre.msg{white-space:pre-wrap;word-break:break-word;background:var(--bg);border:1px solid var(--line);border-radius:10px;padding:12px;margin:14px 0 0;font:inherit;font-size:14px;color:var(--mute)}
+.reset{display:flex;justify-content:center;margin-top:22px}
+.reset button{background:var(--amber);border-color:var(--amber);color:var(--amber-ink);font-weight:700;padding:12px 24px;font-size:17px}
+.reset button.sure{background:var(--red);border-color:var(--red);color:#fff}
+.note{text-align:center;color:var(--mute);font-size:13px;margin-top:8px}
+@media (prefers-reduced-motion:no-preference){.rc{transition:background .2s}}
+</style>
+</head>
+<body>
+<main>
+ <div class="top"><div><h1>หารบิล</h1><p>แต่ละคนจ่าย Service Charge และ VAT ตามอาหารที่กินจริง</p></div>
+ <svg class="orn" viewBox="0 0 180 120" fill="none" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M104 8L68 66M118 12L82 68" stroke="#ffd37a" stroke-width="3.5"/><path d="M70 36c-5-5 5-8 0-14M92 36c-5-5 5-8 0-14" stroke="#d9d6f5" stroke-opacity=".75" stroke-width="2.5"/><path d="M30 66h120c0 30-24 50-60 50S30 96 30 66z" fill="#f5a524"/><path d="M30 66h120" stroke="#ffe3a3" stroke-width="3"/><path d="M46 66c6-13 16-13 22 0s16 13 22 0 16-13 22 0 12 10 18 0" stroke="#fff3d1" stroke-width="3.5"/><path d="M62 90c20 8 36 8 56 0" stroke="#c97d0a" stroke-width="3"/><path d="M150 24l2.5 7 7 2.5-7 2.5-2.5 7-2.5-7-7-2.5 7-2.5z" fill="#ffd37a"/><circle cx="22" cy="34" r="3" fill="#ffd37a"/><circle cx="36" cy="14" r="2" fill="#d9d6f5"/></svg><button id="theme" aria-label="สลับโหมดสว่าง/มืด">◐</button></div>
+ <div class="kpis"><div class="kpi"><small>ยอดบิลรวม</small><b id="kTotal">0</b></div><div class="kpi un" id="kUn"><small>ยังไม่จ่าย</small><b id="kUnpaid">0</b></div></div>
+
+ <section><h2>ใครมาบ้าง</h2>
+  <div class="row" id="people"></div>
+  <form class="row" id="pform" style="margin-top:10px"><input class="grow" type="text" id="pname" placeholder="ชื่อ เช่น สาย" autocomplete="off"><button class="pri" type="submit">เพิ่มคน</button></form></section>
+
+ <section><h2>เมนูที่สั่ง</h2><div id="items"></div>
+  <button class="ghost" id="addItem">+ เพิ่มเมนู</button></section>
+
+ <section><h2>Service Charge และ VAT</h2>
+  <div class="set" id="set">
+   <label><input type="checkbox" id="scOn"> Service Charge</label><span class="rate" id="scR"><input type="number" id="sc" min="0" step="0.5" inputmode="decimal"> %</span><span></span>
+   <label><input type="checkbox" id="vatOn"> VAT</label><span class="rate" id="vatR"><input type="number" id="vat" min="0" step="0.5" inputmode="decimal"> %</span><span></span>
+   <label style="grid-column:1/-1"><input type="checkbox" id="vOnS"> VAT คิดรวม Service Charge (คิดบนยอดหลังบวก Service Charge)</label>
+  </div></section>
+
+ <section><h2>ยอดที่ต้องจ่าย</h2><div class="receipts" id="rec"></div>
+  <pre class="msg" id="msg"></pre>
+  <div class="share"><button class="line" id="lineAll">ส่งสรุปเข้า LINE</button><button id="copyAll">คัดลอกข้อความ</button><button id="shareAll">แชร์…</button></div></section>
+
+ <div class="reset"><button id="reset">Payment Success · ล้างข้อมูลบิลนี้</button></div>
+ <p class="note">ล้างเมนู ชื่อคน และสถานะจ่ายแล้ว แต่เก็บอัตรา Service Charge และ VAT ไว้ใช้ครั้งถัดไป</p>
+</main>
+<script>
+const KEY="splitbill.v1";
+const def=()=>({people:[],items:[],paid:{},sc:10,vat:7,scOn:true,vatOn:true,vOnS:true});
+let S=def(),uid=1;
+try{const r=localStorage.getItem(KEY);if(r)S=Object.assign(def(),JSON.parse(r))}catch(e){}
+S.uid=S.uid||Math.max(0,...S.people.map(p=>p.id),...S.items.map(i=>i.id))+1;
+const $=id=>document.getElementById(id);
+const save=()=>{try{localStorage.setItem(KEY,JSON.stringify(S))}catch(e){}};
+const fmt=(n,d=0)=>n.toLocaleString("th-TH",{minimumFractionDigits:d,maximumFractionDigits:d});
+const esc=s=>s.replace(/[&<>"]/g,c=>({"&":"&amp;","<":"&lt;",">":"&gt;",'"':"&quot;"}[c]));
+
+function calc(){
+ const sc=S.scOn?(+S.sc||0)/100:0,vat=S.vatOn?(+S.vat||0)/100:0,out={};
+ S.people.forEach(p=>out[p.id]={food:0});
+ S.items.forEach(it=>{const w=it.who.filter(id=>out[id]);if(!w.length)return;w.forEach(id=>out[id].food+=(+it.price||0)/w.length)});
+ let T=0;
+ S.people.forEach(p=>{const o=out[p.id];o.sc=o.food*sc;o.vat=(o.food+(S.vOnS?o.sc:0))*vat;o.sum=o.food+o.sc+o.vat;o.pay=Math.round(o.sum);T+=o.sum});
+ return{out,T}
+}
+function render(){
+ $("people").innerHTML=S.people.length?S.people.map(p=>`<span class="chip">${esc(p.name)}<button data-del-p="${p.id}" aria-label="ลบ ${esc(p.name)}">×</button></span>`).join(""):'<p class="empty">เริ่มจากเพิ่มชื่อคนที่มากินด้วยกัน</p>';
+ $("items").innerHTML=S.items.length?S.items.map(it=>`<div class="item" data-id="${it.id}">
+  <div class="row"><input class="name" type="text" data-f="name" value="${esc(it.name)}" placeholder="ชื่อเมนู" aria-label="ชื่อเมนู">
+  <input class="price" type="number" data-f="price" value="${it.price===""?"":it.price}" placeholder="ราคา" min="0" step="any" inputmode="decimal" aria-label="ราคา"><button data-del-i="${it.id}" aria-label="ลบเมนู">×</button></div>
+  <div class="who">${S.people.map(p=>`<button data-tg="${p.id}" aria-pressed="${it.who.includes(p.id)}">${esc(p.name)}</button>`).join("")}${S.people.length>1?'<button class="all" data-all="1">ทุกคน</button>':""}<span class="hint" data-hint></span></div></div>`).join(""):'<p class="empty">ยังไม่มีเมนู กด “เพิ่มเมนู” แล้วเลือกว่าใครกิน</p>';
+ $("scOn").checked=S.scOn;$("vatOn").checked=S.vatOn;$("vOnS").checked=S.vOnS;$("sc").value=S.sc;$("vat").value=S.vat;
+ $("scR").style.opacity=S.scOn?1:.4;$("vatR").style.opacity=S.vatOn?1:.4;
+ summary()
+}
+const LINE="https://line.me/R/msg/text/?";let MSG={all:"",one:{}};
+function build(out,T){
+ const r=(S.scOn||S.vatOn)?" (รวม "+[S.scOn?"Service Charge "+S.sc+"%":"",S.vatOn?"VAT "+S.vat+"%":""].filter(Boolean).join(" + ")+")":"";
+ const one={};
+ S.people.forEach(p=>{const o=out[p.id];one[p.id]=`🧾 ยอดบิลของ ${p.name}\nต้องจ่าย ${fmt(o.pay)} บาท\n(อาหาร ${fmt(o.food,2)}${S.scOn?` + Service Charge ${fmt(o.sc,2)}`:""}${S.vatOn?` + VAT ${fmt(o.vat,2)}`:""})\nขอบคุณครับ 🙏`});
+ const lines=S.people.map(p=>`• ${p.name} ${fmt(out[p.id].pay)} บาท${S.paid[p.id]?" ✓ จ่ายแล้ว":""}`);
+ return{all:S.people.length?`🧾 สรุปหารบิล\nยอดรวม ${fmt(T,2)} บาท${r}\n\n${lines.join("\n")}\n\nขอบคุณครับ 🙏`:"",one}
+}
+function copy(txt,btn){
+ const o=btn.textContent,done=()=>{btn.textContent="คัดลอกแล้ว ✓";setTimeout(()=>btn.textContent=o,1600)};
+ const fb=()=>{const a=document.createElement("textarea");a.value=txt;document.body.appendChild(a);a.select();try{document.execCommand("copy");done()}catch(e){}a.remove()};
+ if(navigator.clipboard&&navigator.clipboard.writeText)navigator.clipboard.writeText(txt).then(done,fb);else fb()
+}
+function summary(){
+ const{out,T}=calc();
+ document.querySelectorAll(".item").forEach(el=>{const it=S.items.find(i=>i.id==el.dataset.id),n=it.who.length,h=el.querySelector("[data-hint]");
+  h.textContent=n?`หาร ${n} คน · คนละ ${fmt((+it.price||0)/n,2)}`:"ยังไม่เลือกคนกิน"});
+ let un=0;
+ $("rec").innerHTML=S.people.length?S.people.map(p=>{const o=out[p.id],pd=S.paid[p.id];if(!pd)un+=o.pay;
+  return`<div class="rc${pd?" paid":""}"><h3>${esc(p.name)}</h3><dl><dt>ค่าอาหาร</dt><dd>${fmt(o.food,2)}</dd>${S.scOn?`<dt>Service Charge</dt><dd>${fmt(o.sc,2)}</dd>`:""}${S.vatOn?`<dt>VAT</dt><dd>${fmt(o.vat,2)}</dd>`:""}</dl>
+  <div class="tot"><span>ต้องจ่าย</span><b>${fmt(o.pay)}</b></div><button class="pay" data-pay="${p.id}">${pd?"จ่ายแล้ว ✓ (กดเพื่อยกเลิก)":"ทำเครื่องหมายว่าจ่ายแล้ว"}</button><button class="snd line" data-line="${p.id}">ส่งยอดคนนี้เข้า LINE</button></div>`}).join(""):'<p class="empty">ยอดของแต่ละคนจะแสดงที่นี่</p>';
+ $("kTotal").textContent=fmt(T,2);$("kUnpaid").textContent=fmt(un);$("kUn").classList.toggle("done",T>0&&un===0);
+ MSG=build(out,T);$("msg").textContent=MSG.all||"เพิ่มคนและเมนู แล้วข้อความสรุปจะขึ้นที่นี่";
+ save()
+}
+document.addEventListener("click",e=>{
+ const t=e.target.closest("button");if(!t)return;
+ const d=t.dataset,itEl=t.closest(".item"),it=itEl&&S.items.find(i=>i.id==itEl.dataset.id);
+ if(d.delP){S.people=S.people.filter(p=>p.id!=d.delP);S.items.forEach(i=>i.who=i.who.filter(x=>x!=d.delP));render()}
+ else if(d.delI){S.items=S.items.filter(i=>i.id!=d.delI);render()}
+ else if(d.tg){const id=+d.tg;it.who=it.who.includes(id)?it.who.filter(x=>x!==id):[...it.who,id];t.setAttribute("aria-pressed",it.who.includes(id));summary()}
+ else if(d.all){it.who=S.people.map(p=>p.id);render()}
+ else if(d.pay){S.paid[d.pay]=!S.paid[d.pay];summary()}
+ else if(d.line){window.open(LINE+encodeURIComponent(MSG.one[d.line]),"_blank")}
+ else if(t.id==="lineAll"){MSG.all&&window.open(LINE+encodeURIComponent(MSG.all),"_blank")}
+ else if(t.id==="copyAll"){MSG.all&&copy(MSG.all,t)}
+ else if(t.id==="shareAll"){if(MSG.all){navigator.share?navigator.share({text:MSG.all}).catch(()=>{}):copy(MSG.all,t)}}
+ else if(t.id==="addItem"){S.items.push({id:S.uid++,name:"",price:"",who:[]});render();const n=document.querySelectorAll(".item .name");n[n.length-1].focus()}
+ else if(t.id==="theme"){const r=document.documentElement,dark=r.dataset.theme?r.dataset.theme==="dark":matchMedia("(prefers-color-scheme:dark)").matches;r.dataset.theme=dark?"light":"dark"}
+ else if(t.id==="reset"){if(t.classList.contains("sure")){S.people=[];S.items=[];S.paid={};t.classList.remove("sure");t.textContent="Payment Success · ล้างข้อมูลบิลนี้";render()}
+  else{t.classList.add("sure");t.textContent="กดอีกครั้งเพื่อยืนยันการล้างข้อมูล";setTimeout(()=>{t.classList.remove("sure");t.textContent="Payment Success · ล้างข้อมูลบิลนี้"},4000)}}
+});
+document.addEventListener("input",e=>{
+ const el=e.target,itEl=el.closest(".item");
+ if(itEl){const it=S.items.find(i=>i.id==itEl.dataset.id);it[el.dataset.f]=el.dataset.f==="price"?(el.value===""?"":+el.value):el.value;summary()}
+ else if(el.id==="sc"||el.id==="vat"){S[el.id]=el.value===""?0:+el.value;summary()}
+});
+document.addEventListener("change",e=>{const el=e.target;if(["scOn","vatOn","vOnS"].includes(el.id)){S[el.id]=el.checked;render()}});
+$("pform").addEventListener("submit",e=>{e.preventDefault();const v=$("pname").value.trim();if(!v)return;S.people.push({id:S.uid++,name:v});$("pname").value="";render();$("pname").focus()});
+render();
+</script>
+</body>
+</html>
